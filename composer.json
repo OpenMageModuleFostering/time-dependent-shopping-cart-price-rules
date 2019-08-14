@@ -1,0 +1,16 @@
+{
+    "name": "OpenMageModuleFostering/time-dependent-shopping-cart-price-rules",
+    "type": "magento-module",
+    "license": "OSL",
+    "homepage": "",
+    "description": "Time dependent Shopping cart price rules",
+    "authors": [
+    {
+        "name": "Orange35",
+        "email": "support@orange35.com"
+    }
+],
+    "suggest": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}
