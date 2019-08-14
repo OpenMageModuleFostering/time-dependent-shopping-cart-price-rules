@@ -50,7 +50,7 @@ class Orange35_SalesruleTime_Adminhtml_Promo_QuoteController extends Mage_Adminh
         if ($this->getRequest()->getPost()) {
             try {
                 /** @var $model Mage_SalesRule_Model_Rule */
-                $model = Mage::getModel('salesrule/rule');
+                $model = Mage::getModel('orange35_salesruletime/salesRule_rule');
                 Mage::dispatchEvent(
                     'adminhtml_controller_salesrule_prepare_save',
                     array('request' => $this->getRequest()));

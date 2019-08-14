@@ -2,7 +2,7 @@
 <config>
     <modules>
         <Orange35_SalesruleTime>
-            <version>1.0.0</version>
+            <version>1.0.2</version>
         </Orange35_SalesruleTime>
     </modules>
     <global>
@@ -55,6 +55,14 @@
                     </orange35_salesruletime_quote_edit_tab_main_prepare_form>
                 </observers>
             </adminhtml_promo_quote_edit_tab_main_prepare_form>
+            <controller_action_predispatch>
+                <observers>
+                    <orange35_salesruletime>
+                        <class>Orange35_SalesruleTime_Model_Observer</class>
+                        <method>checkRequiredModules</method>
+                    </orange35_salesruletime>
+                </observers>
+            </controller_action_predispatch>
         </events>
     </adminhtml>
     <admin>

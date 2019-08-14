@@ -36,4 +36,28 @@ class Orange35_SalesruleTime_Model_Rule_Rule extends Mage_Rule_Model_Rule {
 
         return $arr;
     }
+    
+    public function validateData(Varien_Object $object)
+    {
+        $result = parent::validateData($object);
+        $result = $result!= true ? $result : array();
+        $fromDate = $toDate = null;
+
+        if ($object->hasFromDate() && $object->hasToDate()) {
+            $fromDate = $object->getFromDate();
+            $toDate = $object->getToDate();
+        }
+
+        if ($fromDate && $toDate) {
+            $fromDate = new Zend_Date($fromDate, Varien_Date::DATETIME_INTERNAL_FORMAT);
+            $toDate   = new Zend_Date($toDate, Varien_Date::DATETIME_INTERNAL_FORMAT);
+
+            if ($fromDate->compare($toDate) === 1) {
+                if (!in_array(Mage::helper('rule')->__('End Date must be greater than Start Date.'), $result)){
+                    $result[] = Mage::helper('rule')->__('End Date must be greater than Start Date.');
+                }
+            }
+        }
+        return !empty($result) ? $result : true;
+    }
 }
