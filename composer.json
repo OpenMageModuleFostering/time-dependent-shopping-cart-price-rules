@@ -1,7 +1,7 @@
 {
-    "name": "OpenMageModuleFostering\/time-dependent-shopping-cart-price-rules",
+    "name": "openmage-module-fostering\/time-dependent-shopping-cart-price-rules",
     "type": "magento-module",
-    "license": "OSL",
+    "license": "OSL-3.0",
     "homepage": "",
     "description": "Time dependent Shopping cart price rules",
     "authors": [
